@@ -6,9 +6,9 @@
 	<property name="UltimateCoreBuildDir" location="../Ultimate Core/build" />
 	<target name="clean" description="Deletes old tar files.">
 		<delete failonerror="false">
-			<fileset includes="${UltimateCMSRequirements}/*cachedList.tar.gz" />
-			<fileset includes="${UltimateCMSRequirements}/*messageACP.tar.gz" />
-			<fileset includes="${UltimateCMSRequirements}/*ultimateCore.tar.gz" />
+			<fileset dir="${UltimateCMSRequirements}" includes="*cachedList.tar.gz" />
+			<fileset dir="${UltimateCMSRequirements}" includes="*messageACP.tar.gz" />
+			<fileset dir="${UltimateCMSRequirements}" includes="*ultimateCore.tar.gz" />
 		</delete>
 	</target>
 	
