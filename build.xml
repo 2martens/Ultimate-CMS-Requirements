@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ultimate CMS Requirements" default="build">
+	<property name="UltimateCMSRequirements" location="../Ultimate CMS/de.plugins-zum-selberbauen.ultimate/requirements" />
+	<property name="CachedListBuildDir" location="../Cached List/build" />
+	<property name="MessageACPBuildDir" location="../Message ACP/build" />
+	<property name="UltimateCoreBuildDir" location="../Ultimate Core/build" />
+	<target name="clean" description="Deletes old tar files.">
+		<delete failonerror="false">
+			<fileset includes="${UltimateCMSRequirements}/*cachedList.tar.gz" />
+			<fileset includes="${UltimateCMSRequirements}/*messageACP.tar.gz" />
+			<fileset includes="${UltimateCMSRequirements}/*ultimateCore.tar.gz" />
+		</delete>
+	</target>
+	
+	<target name="build" depends="clean" description="Moves the requirement archives.">
+		<copy file="${CachedListBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
+		<copy file="${MessageACPBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
+		<copy file="${UltimateCoreBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
+	</target>
+</project>
