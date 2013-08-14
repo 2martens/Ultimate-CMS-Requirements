@@ -20,7 +20,7 @@
 			<fileset dir="${MessageACPBuildDir}" includes="*cachedList.tar.gz" />
 		</copy>
 		<copy todir="${UltimateCMSRequirements}">
-			<fileset dir="${UltimateCMSBuildDir}" includes="*cachedList.tar.gz" />
+			<fileset dir="${UltimateCoreBuildDir}" includes="*cachedList.tar.gz" />
 		</copy>
 	</target>
 </project>
