@@ -13,8 +13,14 @@
 	</target>
 	
 	<target name="build" depends="clean" description="Moves the requirement archives.">
-		<copy file="${CachedListBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
-		<copy file="${MessageACPBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
-		<copy file="${UltimateCoreBuildDir}/*.gz" todir="${UltimateCMSRequirements}" />
+		<copy todir="${UltimateCMSRequirements}">
+			<fileset dir="${CachedListBuildDir}" includes="*cachedList.tar.gz" />
+		</copy>
+		<copy todir="${UltimateCMSRequirements}">
+			<fileset dir="${MessageACPBuildDir}" includes="*cachedList.tar.gz" />
+		</copy>
+		<copy todir="${UltimateCMSRequirements}">
+			<fileset dir="${UltimateCMSBuildDir}" includes="*cachedList.tar.gz" />
+		</copy>
 	</target>
 </project>
