@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Ultimate CMS Requirements" default="build">
-	<property name="UltimateCMSRequirements" location="../Ultimate CMS/de.plugins-zum-selberbauen.ultimate/requirements" />
-	<property name="CachedListBuildDir" location="../Cached List/build" />
-	<property name="MessageACPBuildDir" location="../Message ACP/build" />
-	<property name="UltimateCoreBuildDir" location="../Ultimate Core/build" />
+<project name="WCF Conversation" default="build">
 	<target name="clean" description="Deletes old tar files.">
-		<delete failonerror="false">
-			<fileset dir="${UltimateCMSRequirements}" includes="*cachedList.tar.gz" />
-			<fileset dir="${UltimateCMSRequirements}" includes="*messageACP.tar.gz" />
-			<fileset dir="${UltimateCMSRequirements}" includes="*ultimateCore.tar.gz" />
-		</delete>
+		<delete failonerror="false" dir="metadata" />
+		<delete failonerror="false" dir="build" />
 	</target>
 	
-	<target name="build" depends="clean" description="Moves the requirement archives.">
-		<copy todir="${UltimateCMSRequirements}">
-			<fileset dir="${CachedListBuildDir}" includes="*cachedList.tar.gz" />
+	<target name="prepare" depends="clean" description="Prepares the build.">
+		<mkdir dir="build" />
+		<mkdir dir="metadata" />
+		<mkdir dir="metadata/language" />
+		
+		<copy todir="metadata">
+			<fileset dir="." includes="*.xml" />
+			<fileset dir="." includes="*.sql" />
 		</copy>
-		<copy todir="${UltimateCMSRequirements}">
-			<fileset dir="${MessageACPBuildDir}" includes="*messageACP.tar.gz" />
+		<copy todir="metadata/language">
+			<fileset dir="language" includes="*.xml" />
 		</copy>
-		<copy todir="${UltimateCMSRequirements}">
-			<fileset dir="${UltimateCoreBuildDir}" includes="*ultimateCore.tar.gz" />
-		</copy>
+	</target>
+
+	<target name="pack" depends="prepare" description="Packs the tar files.">
+		<tar destfile="metadata/templates.tar" 
+			basedir="templates"
+		/>
+		<tar destfile="metadata/files.tar" 
+			basedir="files"
+		/>
+	</target>
+
+	<target name="build" depends="pack" description="Generates the package archive.">
+		<tar destfile="build/com.woltlab.wcf.conversation.tar" 
+			 basedir="metadata"
+		/>
+		<gzip src="build/com.woltlab.wcf.conversation.tar"
+			  destfile="build/com.woltlab.wcf.conversation.tar.gz"
+		/>
 	</target>
 </project>
