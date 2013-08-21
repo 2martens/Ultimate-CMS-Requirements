@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WCF Conversation" default="build">
+	<property name="conversationDir" location="../com.woltlab.wcf.conversation/" />
 	<target name="clean" description="Deletes old tar files.">
 		<delete failonerror="false" dir="metadata" />
 		<delete failonerror="false" dir="build" />
@@ -15,16 +16,16 @@
 			<fileset dir="." includes="*.sql" />
 		</copy>
 		<copy todir="metadata/language">
-			<fileset dir="language" includes="*.xml" />
+			<fileset dir="${conversationDir}language" includes="*.xml" />
 		</copy>
 	</target>
 
 	<target name="pack" depends="prepare" description="Packs the tar files.">
 		<tar destfile="metadata/templates.tar" 
-			basedir="templates"
+			basedir="${conversationDir}templates"
 		/>
 		<tar destfile="metadata/files.tar" 
-			basedir="files"
+			basedir="${conversationDir}files"
 		/>
 	</target>
 
