@@ -12,8 +12,8 @@
 		<mkdir dir="metadata/language" />
 		
 		<copy todir="metadata">
-			<fileset dir="." includes="*.xml" />
-			<fileset dir="." includes="*.sql" />
+			<fileset dir="${conversationDir}" includes="*.xml" />
+			<fileset dir="${conversationDir}" includes="*.sql" />
 		</copy>
 		<copy todir="metadata/language">
 			<fileset dir="${conversationDir}/language" includes="*.xml" />
