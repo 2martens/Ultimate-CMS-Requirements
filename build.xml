@@ -4,11 +4,13 @@
 	<property name="CachedListBuildDir" location="../de.plugins-zum-selberbauen.cachedList/build" />
 	<property name="MessageACPBuildDir" location="../de.plugins-zum-selberbauen.messageACP/build" />
 	<property name="UltimateCoreBuildDir" location="../de.plugins-zum-selberbauen.ultimateCore/build" />
+	<property name="WCFConversationBuildDir" location="../com.woltlab.wcf.conversation/build" />
 	<target name="clean" description="Deletes old tar files.">
 		<delete failonerror="false">
 			<fileset dir="${UltimateCMSRequirements}" includes="*cachedList.tar.gz" />
 			<fileset dir="${UltimateCMSRequirements}" includes="*messageACP.tar.gz" />
 			<fileset dir="${UltimateCMSRequirements}" includes="*ultimateCore.tar.gz" />
+			<fileset dir="${UltimateCMSRequirements}" includes="*conversation.tar.gz" />
 		</delete>
 	</target>
 	
@@ -21,6 +23,9 @@
 		</copy>
 		<copy todir="${UltimateCMSRequirements}">
 			<fileset dir="${UltimateCoreBuildDir}" includes="*ultimateCore.tar.gz" />
+		</copy>
+		<copy todir="${UltimateCMSRequirements}">
+			<fileset dir="${WCFConversationBuildDir}" includes="*conversation.tar.gz" />
 		</copy>
 	</target>
 </project>
