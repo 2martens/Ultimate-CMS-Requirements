@@ -16,16 +16,16 @@
 			<fileset dir="." includes="*.sql" />
 		</copy>
 		<copy todir="metadata/language">
-			<fileset dir="${conversationDir}language" includes="*.xml" />
+			<fileset dir="${conversationDir}/language" includes="*.xml" />
 		</copy>
 	</target>
 
 	<target name="pack" depends="prepare" description="Packs the tar files.">
 		<tar destfile="metadata/templates.tar" 
-			basedir="${conversationDir}templates"
+			basedir="${conversationDir}/templates"
 		/>
 		<tar destfile="metadata/files.tar" 
-			basedir="${conversationDir}files"
+			basedir="${conversationDir}/files"
 		/>
 	</target>
 
