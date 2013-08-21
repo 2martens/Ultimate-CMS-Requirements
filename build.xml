@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Ultimate CMS Requirements" default="build">
-	<property name="UltimateCMSRequirements" location="../de.plugins-zum-selberbauen.ultimate/de.plugins-zum-selberbauen.ultimate/requirements" />
+	<property name="UltimateCMSRequirements" location="../de.plugins-zum-selberbauen.ultimate/metadata/requirements" />
 	<property name="CachedListBuildDir" location="../de.plugins-zum-selberbauen.cachedList/build" />
 	<property name="MessageACPBuildDir" location="../de.plugins-zum-selberbauen.messageACP/build" />
 	<property name="UltimateCoreBuildDir" location="../de.plugins-zum-selberbauen.ultimateCore/build" />
