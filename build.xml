@@ -27,6 +27,12 @@
 		<tar destfile="metadata/files.tar" 
 			basedir="${conversationDir}/files"
 		/>
+		<tar destfile="metadata/files_update.tar" 
+			basedir="${conversationDir}/files"
+		/>
+		<tar destfile="metadata/templates_update.tar" 
+			basedir="${conversationDir}/templates"
+		/>
 	</target>
 
 	<target name="build" depends="pack" description="Generates the package archive.">
