@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="WCF Conversation" default="build">
-	<property name="conversationDir" location="../com.woltlab.wcf.conversation/" />
+	<property name="conversationDir" location="../Conversations2.1/" />
 	<target name="clean" description="Deletes old tar files.">
 		<delete failonerror="false" dir="metadata" />
 		<delete failonerror="false" dir="build" />
