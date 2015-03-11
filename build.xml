@@ -4,7 +4,7 @@
 	<property name="CachedListBuildDir" location="../de.plugins-zum-selberbauen.cachedList/build" />
 	<property name="MessageACPBuildDir" location="../de.plugins-zum-selberbauen.messageACP/build" />
 	<property name="UltimateCoreBuildDir" location="../de.plugins-zum-selberbauen.ultimateCore/build" />
-	<property name="WCFConversationBuildDir" location="../com.woltlab.wcf.conversation.build/build" />
+	<property name="WCFConversationBuildDir" location="../Conversations2.1.build/build" />
 	<target name="clean" description="Deletes old tar files.">
 		<delete failonerror="false">
 			<fileset dir="${UltimateCMSRequirements}" includes="*cachedList.tar.gz" />
